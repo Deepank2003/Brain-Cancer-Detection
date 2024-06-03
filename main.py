@@ -3,7 +3,7 @@ import tensorflow as tf
 import numpy as np
 from keras.models import load_model
 
-model_path = "C:/Users/deepa/Downloads/archive/tumor_model_final.keras"
+model_path = "C:/Users/deepa/Desktop/Python Programming/__pycache__/app/tumor_model_final.keras"
 model = load_model(model_path)
 
 
@@ -19,7 +19,7 @@ def model_prediction(test_image):
 
 #sidebar
 st.sidebar.title("Dashboard")
-app_mode = st.sidebar.selectbox("select page",["Home","About","Tumor Prediction","Suggestions"])
+app_mode = st.sidebar.selectbox("select page",["Home","About","Tumor Prediction"])
 
 if(app_mode=="Home"):
     st.header("BRAIN TUMOR DETECTION SYSTEM")
@@ -94,6 +94,3 @@ elif(app_mode=="Tumor Prediction"):
                 img_array = np.array(test_image)
             st.success("Model is Predicting it's a {} ".format(labels[y_pred]))
 
-elif(app_mode=="Suggestions"):
-        st.header("Suggestions")
-        st.markdown("""""")
